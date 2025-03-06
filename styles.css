@@ -498,3 +498,20 @@ body {
         transform: translateX(0);
     }
 }
+/* Animation for the About Me text */
+.animated-text {
+    opacity: 0; /* Start with invisible text */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInUp 1s ease-in-out 0.5s forwards; /* Animation with delay */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
