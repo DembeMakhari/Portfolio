@@ -148,8 +148,12 @@ body {
 .profile-photo {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 100%;
     margin-bottom: 1rem;
+}
+.profile-photo:hover {
+    transform: scale(1.1); /* Slightly enlarges the photo on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
 }
 
 /* Sections */
