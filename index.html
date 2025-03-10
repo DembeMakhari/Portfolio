@@ -16,7 +16,7 @@
             <div>
                 <div>
                     <ul>
-                        <li><img src="th.jpg" alt="Profile Photo" class="profile-photo"></li>
+                        <li><img src="Dembe.jpg" alt="Profile Photo" class="profile-photo"></li>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
@@ -40,13 +40,13 @@
 <!-- About Section -->
 <section id="about" class="about-section">
     <div class="about-content">
-        <div class="about-photo">
-            <img src="about.jpg" alt="About Photo">
+        <div class="about-photo" style="background-image:url('about.jpg') ;background-size: cover; background-position: center; background-repeat: no-repeat; ">
+            <!--<img src="about.jpg" alt="About Photo">-->
         </div>
         <div class="about-text">
             <h2>About Me</h2>
             <p class="animated-text">Hi, I'm Dembe Makhari, a passionate software developer with experience in building web applications and solving complex problems. I specialize in creating efficient, scalable, and user-friendly solutions that drive business success.</p>
-            <a href="#skills" class="cta-button">View My Skills</a>
+            <a href="path/to/your-cv.pdf" download="Dembe_Makhari_CV.pdf" class="cta-button">Download My CV</a>
         </div>
     </div>
 </section>
@@ -190,17 +190,17 @@
     <p>Upload your certificates <a href="upload.html">here</a>.</p>
     <ul class="certificates-list">
         <li>
-            <a href="https://learn.microsoft.com/en-us/certifications/365-fundamentals/" target="_blank">
+            <a href="https://learn.microsoft.com/en-us/credentials/certifications/d365-fundamentals-customer-engagement-apps-crm/?practice-assessment-type=certification" target="_blank">
                 Microsoft: 365 Fundamentals
             </a>
         </li>
         <li>
-            <a href="https://learn.microsoft.com/en-us/certifications/azure-ai-engineer/" target="_blank">
+            <a href="https://learn.microsoft.com/en-us/users/dembemakhari-1364/credentials/certification/azure-ai-engineer?tab=credentials-tab" target="_blank">
                 Microsoft: Azure AI Engineer Associate
             </a>
         </li>
         <li>
-            <a href="https://learn.microsoft.com/en-us/certifications/azure-developer/" target="_blank">
+            <a href="https://learn.microsoft.com/en-us/users/dembemakhari-1364/credentials/certification/azure-developer?tab=credentials-tab" target="_blank">
                 Microsoft: Azure Developer Associate
             </a>
         </li>
@@ -212,6 +212,20 @@
     </ul>
 </section>
     <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <p class="h3 section-title">Interested in connecting? Send me a message.</p>
+                <form id="contactForm">
+                    <input type="hidden" name="access_key" value="27715866-69a5-489f-adcd-ba33531e9110">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">SEND MESSAGE</button>
+                    <div id="formStatus"></div>
+                </form>
+            </div>
     <section id="contact" class="contact-section">
         <h2>Contact</h2>
         <div class="contact-info">
@@ -221,29 +235,71 @@
         </div>
     </section>
 
+    <script>
+ 
+        document.getElementById("contactForm").addEventListener("submit", async function(event) {
+         
+            event.preventDefault(); // 
+         
+         
+            const form = event.target;
+            const formData = new FormData(form);
+         
+         
+            const statusDiv = document.getElementById("formStatus");
+         
+            try {
+         
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST", 
+                    body: formData 
+                });
+         
+         
+                if (response.ok) {
+                    // Display success message and reset the form
+                    statusDiv.innerText = " Your Message  was sent successfully!";
+                    form.reset(); 
+         
+         
+                    setTimeout(() => {
+                        statusDiv.innerText = ""; 
+                    }, 3000);
+                } else {
+         
+                    statusDiv.innerText = "Something went wrong. Please try again.";
+                }
+            } catch (error) {
+         
+                statusDiv.innerText = "Error: " + error.message;
+            }
+        });
+         
+            </script>
+
     <!-- Chatbot -->
-    <div class="chatbot">
-        <div class="chatbot-icon" onclick="toggleChat()">
-            <i class="fas fa-comments"></i>
+<div class="chatbot">
+    <div class="chatbot-icon" onclick="toggleChat()">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <h3>Chatbot</h3>
+            <span onclick="toggleChat()" class="close-btn">&times;</span>
         </div>
-        <div class="chatbot-window">
-            <div class="chatbot-header">
-                <h3>Chatbot</h3>
-                <span onclick="toggleChat()" class="close-btn">&times;</span>
-            </div>
-            <div class="chatbot-body">
-                <div id="chatbot-messages"></div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbot-input" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
+        <div class="chatbot-body">
+            <div id="chatbot-messages"></div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
+</div>
     <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-content">
-        <p>&copy; 2025 Dembe Makhari. All rights reserved.</p>
+        <p>&copy; 2023 Dembe Makhari. All rights reserved.</p>
     </div>
 </footer>
 

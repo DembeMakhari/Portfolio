@@ -146,43 +146,93 @@ body {
 }
 
 .profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin-bottom: 1rem;
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
+    border-radius: 50%; /* Ensures the image remains circular */
+    margin-bottom: 1.5rem; /* Slightly more space below the photo */
+    border: 3px solid #fff; /* Adds a white border around the photo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
+
 .profile-photo:hover {
     transform: scale(1.1); /* Slightly enlarges the photo on hover */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
 }
 
 /* Sections */
-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-.home-section {
-    background-color: #e0e0e0;
-    padding: 4rem 2rem;
-}
-
 .about-section {
-    background-color: #d0d0d0;
+    padding: 40px 20px; /* Adds padding around the section */
+    background-color: #f9f9f9; /* Optional: Adds a light background */
+    width: 100%; /* Ensures the section takes full width */
 }
 
 .about-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center; /* Aligns the photo and text vertically */
+    gap: 40px; /* Adds space between the photo and text */
+    max-width: 1200px; /* Limits the width of the content */
+    margin: 0 auto; /* Centers the content */
+    width: 100%; /* Ensures the container takes full width */
 }
 
 .about-photo {
-    width: 200px;
-    height: 200px;
     border-radius: 10px;
-    margin-right: 2rem;
+    height: 500px;
+    margin-right: 2rem; /* Adds space between the photo and text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
+.about-photo img {
+    border-radius: 10px; /* Matches the container's border radius */
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: 100%; /* Ensures the image takes the full height of the container */
+    object-fit:fill; /* Ensures the image covers the entire area without distortion */
+}
+
+.about-text {
+    flex: 1; /* Allows the text to take up remaining space */
+}
+
+.animated-text {
+    font-size: 1.1rem; /* Adjusts the text size */
+    line-height: 1.6; /* Improves readability */
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Breakpoint for Smaller Screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks the photo and text vertically */
+        text-align: center; /* Centers the text */
+    }
+
+    .about-photo {
+        width: 100%; /* Makes the photo take full width on smaller screens */
+        height: auto; /* Adjusts height automatically */
+        margin-right: 0; /* Removes the right margin */
+        margin-bottom: 2rem; /* Adds space below the photo */
+    }
+
+    .about-photo img {
+        height: auto; /* Ensures the image scales properly */
+    }
 }
 
 /* Skills Section */
@@ -251,6 +301,107 @@ section {
     background-color: #b0b0b0;
 }
 
+/* General Styles */
+#contact {
+    padding: 30px 0; /* Reduced padding */
+    background-color: #f9f9f9;
+    text-align: left; /* Align text to the left */
+}
+
+.contact-container {
+    max-width: 600px; /* Reduced max-width */
+    margin: 0; /* Remove auto margin to align left */
+    padding: 0 20px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px; /* Reduced padding */
+    border-radius: 8px; /* Slightly smaller border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure form takes full width of container */
+}
+
+.contact-form h2 {
+    font-size: 2rem; /* Smaller font size */
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left; /* Align heading to the left */
+}
+
+.contact-form .section-title {
+    font-size: 1rem; /* Smaller font size */
+    color: #666;
+    margin-bottom: 20px; /* Reduced margin */
+    text-align: left; /* Align subtitle to the left */
+}
+
+/* Form Styles */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between form elements */
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Smaller font size */
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%; /* Ensure inputs take full width */
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #007bff;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 120px; /* Reduced height */
+}
+
+#contactForm button {
+    padding: 12px; /* Reduced padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width */
+}
+
+#contactForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Status Message */
+#formStatus {
+    margin-top: 15px; /* Reduced margin */
+    font-size: 0.9rem; /* Smaller font size */
+    color: #333;
+    text-align: left; /* Align status message to the left */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px; /* Reduced padding */
+    }
+
+    .contact-form h2 {
+        font-size: 1.8rem; /* Smaller font size */
+    }
+
+    .contact-form .section-title {
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
 .contact-section {
     background-color: #a0a0a0;
 }
@@ -402,19 +553,33 @@ body {
     gap: 2rem;
 }
 
+/* About Photo Container */
 .about-photo {
     flex: 1;
     max-width: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    animation: fadeInLeft 1s ease-in-out;
+    border-radius: 10px; /* Rounded corners for the container */
+    overflow: hidden; /* Ensures the image stays within the rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Adds a strong shadow */
+    border: 2px solid #fff; /* Adds a thick white border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
+.about-photo:hover {
+    transform: scale(1.05); /* Slightly enlarges the container on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhances shadow on hover */
+}
+
+/* About Photo Image */
 .about-photo img {
     width: 100%;
-    height: auto;
+    height: 250px;
     display: block;
+    border-radius: 15px; /* Slightly rounded corners for the image */
+    transition: transform 0.3s ease; /* Smooth hover effect for the image */
+}
+
+.about-photo:hover img {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
 }
 
 .about-text {

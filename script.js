@@ -24,6 +24,7 @@ function sendMessage() {
         // Clear the input field
         input.value = '';
     }
+    
 }
 
 // Function to generate a response based on user input
