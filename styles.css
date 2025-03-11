@@ -301,6 +301,11 @@ body {
     background-color: #b0b0b0;
 }
 
+.certificates-section li {
+    text-decoration: none;
+    list-style: none;
+}
+
 /* General Styles */
 #contact {
     padding: 30px 0; /* Reduced padding */
@@ -536,6 +541,31 @@ body {
 .cta-button:hover {
     background-color: #555;
     transform: translateY(-5px);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #333; /* Default icon color */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icon:hover {
+    color: #0077b5; /* LinkedIn blue */
+    transform: scale(1.2); /* Hover effect */
+}
+
+.social-icon.fa-github:hover {
+    color: #333; /* GitHub black */
+}
+
+.social-icon.fa-youtube:hover {
+    color: #ff0000; /* YouTube red */
 }
 
 /* About Section */
